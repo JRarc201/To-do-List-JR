@@ -59,10 +59,6 @@ body{
     color: #fff;
 }
 
-#text-input button:hover{
-    background-color: #ff3b25;
-    cursor: pointer;
-}
 
 #text-input button:active{
     background-color: #a52315;
@@ -156,7 +152,53 @@ ul li span:hover{
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 20vh;  
+        min-height: 35vh;  
     }
 
+    #text-input{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f3f0f0;
+        border: none;
+        border-radius: 10px;
+        margin: 0px 30px;
+        height: 50px;
+    }
+    
+    #text-input input{
+        border: none;
+        outline: none;
+        background-color: #f3f0f0;
+        padding-left: 13px;
+        width: 230px;
+        height: 40px;
+        font-size: 15px;
+        
+    }
+    
+    #text-input button{
+        border: none;
+        outline: none;
+        padding: 12px 40px;
+        background-color: #ff5945;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        height: 50px;
+        font-size: 15px;
+    }
+
+    #exit{
+        background-color: #e4e4e4c2
+    }
+
+    
+}
+
+@media (width >= 500px){
+    #text-input button:hover{
+        background-color: #ff3b25;
+        cursor: pointer;
+    }
 }
