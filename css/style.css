@@ -31,7 +31,7 @@ body{
     width: 400px;
 }
 
-#text{
+#text-input{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,14 +41,15 @@ body{
     margin: 0px 30px;
 }
 
-#text input{
+#text-input input{
     border: none;
     outline: none;
     background-color: #f3f0f0;
     padding-left: 13px;
+    width: 230px;
 }
 
-#text button{
+#text-input button{
     border: none;
     outline: none;
     padding: 12px 40px;
@@ -58,25 +59,40 @@ body{
     color: #fff;
 }
 
-#text button:hover{
+#text-input button:hover{
     background-color: #ff3b25;
     cursor: pointer;
 }
 
-#text button:active{
+#text-input button:active{
     background-color: #a52315;
 }
 
-ul li{
+#divList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#list{
+    width: 400px;
+
+}
+
+ul > li{
     list-style: none;
     font-size: 17px;
     padding: 12px 0px 12px 40px;
     user-select: none;
     cursor: pointer;
     position: relative;
+    display: flex;
+    width: 350px;
+    padding-right: 70px;
 }
 
-ul li::before{
+ul > li::before{
     content: '';
     position: absolute;
     height: 32px;
@@ -88,8 +104,9 @@ ul li::before{
     text-decoration: line-through;
     top: 6px;
     left: 2px;
-
 }
+
+
 
 ul li.checked{
     color: #555;
@@ -131,4 +148,15 @@ ul li span:hover{
         background-color: #e4e4e4c2;
         cursor: pointer;
     }
+}
+
+@media (width <= 500px){
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 20vh;  
+    }
+
 }

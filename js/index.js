@@ -7,7 +7,7 @@ button.addEventListener('click', () => {
         alert("You mush write something!");
     } else {
         let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
+        li.textContent = inputBox.value;
         list.appendChild(li);
 
         let exit = document.createElement("button");
