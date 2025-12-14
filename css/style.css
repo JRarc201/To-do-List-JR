@@ -1,10 +1,19 @@
+:root{
+    --main-color: #080C31;
+    --secundary-color: #17173B;
+    --alterntive-color: #AF2B38;
+    --alternative-color-hover: #e24252;
+}
+
 *{
+    color: beige;
     font-family: sans-serif;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 body{
     background-color: #5192c7;
+    background-color: var(--main-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,6 +23,7 @@ body{
 
 #todo{
     background-color: #fff;
+    background-color: var(--secundary-color);
     border: none;
     border-radius: 10px;
 
@@ -29,13 +39,14 @@ body{
 
 #input-text{
     width: 400px;
+    background-color: #17173B
 }
 
 #text-input{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f3f0f0;
+    background-color: #151536;
     border: none;
     border-radius: 10px;
     margin: 0px 30px;
@@ -44,7 +55,7 @@ body{
 #text-input input{
     border: none;
     outline: none;
-    background-color: #f3f0f0;
+    background-color: #151536;
     padding-left: 13px;
     width: 230px;
 }
@@ -73,10 +84,12 @@ body{
 
 #list{
     width: 400px;
-
+    transition-duration: 2s;
 }
 
 ul > li{
+    
+    transition-duration: 200ms;
     list-style: none;
     font-size: 17px;
     padding: 12px 0px 12px 40px;
@@ -86,6 +99,35 @@ ul > li{
     display: flex;
     width: 350px;
     padding-right: 70px;
+    transform: translateY(-10px);
+    animation: fadeInSlideDown 0.2s forwards;
+}
+
+@keyframes fadeInSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeOutSlideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.fade-out {
+    animation: fadeOutSlideUp 0.5s forwards;
 }
 
 ul > li::before{
@@ -134,16 +176,9 @@ ul li span:hover{
 #exit{
     position: absolute;
     right: 45px;
-    background-color: #ffffff;
-    border: none;
-    font-size: 11px;
-    border-radius: 16px;
-    height: 26px;
-    width: 26px;
-    &:hover{
-        background-color: #e4e4e4c2;
-        cursor: pointer;
-    }
+    color: #ff2f2f;
+    font-size: 24px;
+    
 }
 
 @media (width <= 500px){
@@ -159,7 +194,7 @@ ul li span:hover{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: #f3f0f0;
+        background-color: #151536;
         border: none;
         border-radius: 10px;
         margin: 0px 30px;
@@ -169,7 +204,7 @@ ul li span:hover{
     #text-input input{
         border: none;
         outline: none;
-        background-color: #f3f0f0;
+        background-color: #151536;
         padding-left: 13px;
         width: 230px;
         height: 40px;
@@ -190,7 +225,7 @@ ul li span:hover{
     }
 
     #exit{
-        background-color: #e4e4e4c2
+        color: var(--alternative-color-hover)
     }
 
     
@@ -199,6 +234,11 @@ ul li span:hover{
 @media (width >= 500px){
     #text-input button:hover{
         background-color: #ff3b25;
+        cursor: pointer;
+    }
+
+    #exit:hover{
+        color: #ff5441;
         cursor: pointer;
     }
 }

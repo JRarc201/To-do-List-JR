@@ -10,9 +10,9 @@ button.addEventListener('click', () => {
         li.textContent = inputBox.value;
         list.appendChild(li);
 
-        let exit = document.createElement("button");
+        let exit = document.createElement("i");
         exit.setAttribute("id", "exit");
-        exit.innerHTML = "X";
+        exit.classList.add("fa-solid", "fa-circle-xmark")
         li.appendChild(exit);
     }
     inputBox.value = "";
@@ -26,6 +26,7 @@ list.addEventListener('click', function (e) {
 
     } else if (e.target.id === "exit") {
         e.target.parentElement.remove();
+        e.classList.add("fade-out");
         saveTask();
     }
 }, false);
@@ -33,6 +34,7 @@ list.addEventListener('click', function (e) {
 function saveTask() {
     localStorage.setItem("data", list.innerHTML);
 }
+
 
 function showTask() {
     list.innerHTML = localStorage.getItem("data");
